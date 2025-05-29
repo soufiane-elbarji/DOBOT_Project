@@ -27,24 +27,23 @@ Install the necessary libraries:
 
 ```bash
 pip install pydobot speechrecognition pyserial
+```
 You'll also need:
 
 pyaudio (may require special install on Windows):
 
-bash
-Copy
-Edit
+```bash
 pip install pipwin
 pipwin install pyaudio
+```
 🚀 How to Run
 Connect your Dobot Magician.
 
 Run the script:
 
-bash
-Copy
-Edit
+```bash
 python dobot_voice_writer.py
+```
 Wait for the prompt:
 🗣️ "Speak now..."
 
@@ -54,6 +53,7 @@ Say something like:
 Watch the Dobot write your speech onto paper!
 
 🧪 Tested With
+```
 Dobot Magician Firmware v1.9.x
 
 Python 3.10
@@ -61,6 +61,7 @@ Python 3.10
 Windows 11
 
 pydobot (latest version)
+```
 
 ❓ Troubleshooting
 🔌 Make sure the Dobot is powered and connected.
