@@ -58,16 +58,10 @@ Dobot Magician Firmware v1.9.x
 
 Python 3.10
 
-Windows 10
+Windows 11
 
 pydobot (latest version)
 
-📁 Project Structure
-bash
-Copy
-Edit
-dobot_voice_writer.py   # Main Python script
-README.md               # This file
 ❓ Troubleshooting
 🔌 Make sure the Dobot is powered and connected.
 
