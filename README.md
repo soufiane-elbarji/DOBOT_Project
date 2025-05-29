@@ -26,7 +26,7 @@ Make sure you have:
 Install the necessary libraries:
 
 ```bash
-pip install pydobot speechrecognition pyserial
+pip install pydobot speechrecognition pyserial numpy opencv-python
 ```
 You'll also need:
 
