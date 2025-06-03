@@ -42,7 +42,7 @@ Connect your Dobot Magician.
 Run the script:
 
 ```bash
-python dobot_voice_writer.py
+python voice_to_dobot.py
 ```
 Wait for the prompt:
  "Speak now..."
