@@ -36,23 +36,29 @@ def listen():
     recognizer = sr.Recognizer()
     mic = sr.Microphone()
     with mic as source:
-        print("[🎤] said anything..")
+        print("Speak now...")
         recognizer.adjust_for_ambient_noise(source)
         audio = recognizer.listen(source)
-        print("[🔍]wait ..")
+        print("Recognizing...")
         try:
             return recognizer.recognize_google(audio, language='en-US')  
         except sr.UnknownValueError:
-            print("[!] rien ")
+            print("Could not understand.")
         except sr.RequestError:
-            print("[!]probleme ")
+            print("Recognition request failed.")
         return None
 
 if _name_ == "_main_":
-    port = 'COM5'  
-    device = Dobot(port=port)
-    print("[✓] Dobot ")
-    device.move_to(175, 0, 0, 0, wait=True)  # Home position
+
+    # Connect to Dobot
+    available_ports = list_ports.comports()
+    port = available_ports[0].device
+    device = pydobot.Dobot(port=port, verbose=True)
+    print("Connected to Dobot")
+
+    # Home position
+    device.move_to(175, 0, 0, 0, wait=True)  
+   
 
     text = listen()
     if text:
