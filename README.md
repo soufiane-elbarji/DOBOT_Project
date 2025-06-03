@@ -1,19 +1,19 @@
-# Dobot Voice Writer 🗣✍️
+# Dobot Voice Writer 
 
 Control your **Dobot Magician** robot arm using **voice commands**! This Python project lets you **speak text**, and the Dobot will automatically **write it on paper** using a pen.
 
 ---
 
-## 🧠 Features
+##  Features
 
-- 🎤 Real-time **speech recognition**
-- ✍️ **Autonomous handwriting** using the Dobot Magician
-- 🧩 Easy integration with `pydobot` library
-- 🖨 Converts spoken words into coordinated movements for writing
+-  Real-time **speech recognition**
+-  **Autonomous handwriting** using the Dobot Magician
+-  Easy integration with `pydobot` library
+-  Converts spoken words into coordinated movements for writing
 
 ---
 
-## 🛠 Requirements
+## Requirements
 
 Make sure you have:
 
@@ -36,7 +36,7 @@ pyaudio (may require special install on Windows):
 pip install pipwin
 pipwin install pyaudio
 ```
-🚀 How to Run
+ How to Run
 Connect your Dobot Magician.
 
 Run the script:
@@ -45,7 +45,7 @@ Run the script:
 python dobot_voice_writer.py
 ```
 Wait for the prompt:
-🗣️ "Speak now..."
+ "Speak now..."
 
 Say something like:
 "Hello world"
