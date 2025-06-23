@@ -132,5 +132,5 @@ def main():
     write_strokes_with_dobot(strokes)
 
 
-if __name__ == "_main_":
+if __name__ == "__main__":
     main()
