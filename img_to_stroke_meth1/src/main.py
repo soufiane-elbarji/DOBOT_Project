@@ -6,7 +6,7 @@ import img_functions as img
 # from matplotlib import pyplot as plt
  
 # import image
-img_origine = cv.imread('../samples/nvidia.jpg', cv.IMREAD_GRAYSCALE)
+img_origine = cv.imread('samples/nvidia.jpg', cv.IMREAD_GRAYSCALE)
 assert img_origine is not None, "file could not be read, check with os.path.exists()"
 
 # generate outline
@@ -27,8 +27,8 @@ point_image = np.zeros((edges.shape[0], edges.shape[1], 3), dtype=np.uint8)
 
 # Draw each point
 for contour in contours:
-    rnd_color = (random.randint(0,255), random.randint(0,255), random.randint(0,255))
-    k = cv.waitKey(0) # Wait for a keystroke in the window
+    # rnd_color = (random.randint(0,255), random.randint(0,255), random.randint(0,255))
+    # k = cv.waitKey(0) # Wait for a keystroke in the window
     cv.imshow("Contour Points", point_image)
     for point in contour:
         x, y = point[0]  # shape is (1, 2)
