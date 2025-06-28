@@ -6,6 +6,16 @@ from serial.tools import list_ports
 import pydobot
 from Alphabet import alphabet  # <- import the dictionary
 
+port = "COM5"  # Update this to match your Dobot's port
+print("Connecting to Dobot on", port)
+
+device = pydobot.Dobot(port=port, verbose=False)
+
+(x, y, z, r, j1, j2, j3, j4) = device.pose()
+
+SPEED_MM_S = 50
+device.speed = SPEED_MM_S
+
 # ── CONFIG ─────────────────────────────────────
 DEEPSEEK_API_KEY = "API_KEY"
 FONT_HEIGHT_MM  = 6.0
@@ -13,7 +23,6 @@ PEN_UP_Z        = -40
 PEN_DOWN_Z      = -64
 START_X         = 240 
 START_Y         = 135
-SPEED_MM_S      = 50
 CHAR_SPACING    = 6
 line_spacing    = FONT_HEIGHT_MM * 2
 ALLOWED_CHARS   = string.ascii_uppercase + " "

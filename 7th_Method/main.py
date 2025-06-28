@@ -1,4 +1,5 @@
-import json, time, re, sys, string
+import re
+import string
 import speech_recognition as sr
 from openai import OpenAI
 import numpy as np

@@ -12,7 +12,5 @@ print("Dobot connected")
 
 print(f"dobot position:  x:{x} y:{y} z:{z} r:{r}")
 
-device.move_to(240, 135, -64, 0, wait=True)
-
 
 device.close()
