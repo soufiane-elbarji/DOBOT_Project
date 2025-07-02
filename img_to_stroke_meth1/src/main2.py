@@ -6,7 +6,7 @@ from svgpathtools import svg2paths, svg2paths2
 from matplotlib import pyplot as plt
  
 # import image
-img_origine = cv.imread('samples/teapot2.jpg')
+img_origine = cv.imread('samples/image_4.png')
 assert img_origine is not None, "file could not be read, check with os.path.exists()"
 
 # gray :P
@@ -16,10 +16,10 @@ img_gray = cv.cvtColor(img_origine, cv.COLOR_BGR2GRAY)
 edges = img.generate_outline(img_origine)
 edges_invert = cv.bitwise_not(edges)
 
-# cv.imwrite('outputs/teapot2_edge.bmp', edges_invert)
+cv.imwrite('outputs/image_4.bmp', edges_invert)
 
 # svg to path
-paths, attributes, svg_attributes  = svg2paths2("teapot2_output.svg")
+paths, attributes, svg_attributes  = svg2paths2("imqge_4.svg")
 print(str(len(paths)))
 print(svg_attributes)
 
@@ -61,7 +61,7 @@ for path in paths:
 point_image_svg = cv.flip(point_image_svg, 0)
 cv.imshow("svg paths", point_image_svg)
 
-cv.imwrite('outputs/teapot2_strokes_color.jpg', point_image_svg)
+# cv.imwrite('outputs/teapot2_strokes_color.jpg', point_image_svg)
 
 # generate svg form outline (bitmape tarcing)
 
