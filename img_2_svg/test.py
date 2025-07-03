@@ -1,7 +1,7 @@
 import subprocess
 
-img_path = "image_5.bmp"
-output_svg_path = "image_5-1.svg"
+img_path = "darwing_edge.bmp"
+output_svg_path = "darwing_edge-1.svg"
 potrace_executable = "img_to_stroke_meth1\\potrace-1.16.win64\\potrace"
 
 turdsize_val = 1
