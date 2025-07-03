@@ -16,7 +16,7 @@ def generate_outline(img):
     img_resize = cv.resize(img, (new_width, new_height))
 
     # BLUR
-    img_blur = cv.GaussianBlur(img_resize, (3, 3), 0) 
+    img_blur = cv.GaussianBlur(img_resize, (5, 5), 0) 
     # img_blur = cv.medianBlur(img_resize, 3)
 
     # EDGE DETECTION
