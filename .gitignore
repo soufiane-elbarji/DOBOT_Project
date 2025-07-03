@@ -4,4 +4,4 @@
 *.pyd
 
 # Ignore __pycache__ directories
-*__pycache__/
+__pycache__/
