@@ -6,10 +6,11 @@ from svgpathtools import svg2paths, svg2paths2
 from matplotlib import pyplot as plt
 from PIL import Image
 import subprocess
+from rdp import rdp
 
  
 # import image
-img_origine = cv.imread('samples/image_3.png')
+img_origine = cv.imread('samples/image_4.png')
 assert img_origine is not None, "file could not be read, check with os.path.exists()"
 
 # gray :P
@@ -19,23 +20,18 @@ img_gray = cv.cvtColor(img_origine, cv.COLOR_BGR2GRAY)
 edges = img_func.generate_outline(img_origine)
 edges_invert = cv.bitwise_not(edges)
 
-cv.imwrite('pipeline/4/edge.bmp', edges_invert)
-
-## outline to SVG
-
+cv.imwrite('temp/edge.bmp', edges_invert)
 
 # Convert BMP to PBM
-img = "pipeline/4/edge.bmp"
-potrace = "potrace-1.16.win64/potrace"
+img = "temp/edge.bmp"
+potrace = "../potrace-1.16.win64/potrace"
 
 # Run potrace to get SVG
-subprocess.run([potrace, img, "-s", "-o", "pipeline/4/svg_outline.svg"])
+subprocess.run([potrace, img, "-s", "-o", "temp/svg_outline.svg"])
 
 
 # svg to path
-paths, attributes, svg_attributes  = svg2paths2("pipeline/4/svg_outline.svg")
-print(str(len(paths)))
-print(svg_attributes)
+paths, attributes, svg_attributes  = svg2paths2("temp/svg_outline.svg")
 
 # Find bounds
 all_x = []
@@ -69,29 +65,39 @@ else:
     min_y = centre - new_width/2
     max_y = centre + new_width/2
 
-print (f"{min_x}, {max_x}")
-print (f"{min_y}, {max_y}")
-
 
 point_image_svg = np.zeros((edges.shape[0], edges.shape[1], 3), dtype=np.uint8)
-density = 10
+all_strokes = []  
+density = 4
 # Flatten into points
 for path in paths:
+    stroke_points = []
     rnd_color = (random.randint(0,255), random.randint(0,255), random.randint(0,255))
     for segment in path:
-        for t in [i/density for i in range(density+1)]:  # Sample the path
+        for t in [i/density for i in range(density-1)]:  # Sample the path
             point = segment.point(t)
             x, y = point.real, point.imag
             # print(f"x : {x} , y : {y}")
             new_x = int(img_func.remap(x, min_x, max_x, 0, width))
             new_y = int(img_func.remap(y, min_y, max_y, 0, height))
+
+            stroke_points.append((new_x, new_y))
             cv.circle(point_image_svg, (new_x, new_y), radius=1, color=rnd_color, thickness=-1)
             # Now x, y is one coordinate the robot should go to
+
+    all_strokes.append(stroke_points)
 
 point_image_svg = cv.flip(point_image_svg, 0)
 cv.imshow("svg paths", point_image_svg)
 
-cv.imwrite('pipeline/4/paths.jpg', point_image_svg)
+cv.imwrite('temp/paths.jpg', point_image_svg)
+
+
+
+
+# for stroke in all_strokes:
+#     print(len(stroke))
+
 
 # generate svg form outline (bitmape tarcing)
 
