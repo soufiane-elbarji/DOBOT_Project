@@ -5,7 +5,6 @@ import speech_recognition as sr
 import re
 import Imagen
 
-# HF_TOKEN = ""
 
 # ── VOICE AND AI FUNCTIONS ─────────────────────
 def listen():
@@ -28,16 +27,6 @@ def extract_keyword(cmd):
     m = re.search(r"about\s+(.+)$", cmd)
     return (m.group(1) if m else cmd).strip()
 
-# def generate_image(keyword):
-
-#     client = InferenceClient(
-#         model="stabilityai/stable-diffusion-xl-base-1.0",
-#         token=HF_TOKEN
-#     )
-#     prompt = f"Clean line and Realistic art of {keyword}. Pure outline illustration, white background; Stroke-based art style; Minimal detail; crisp lines; line art only; no fill; no shading; no color; no background; no texture; no gradients; no patterns; no noise; no artifacts; no distortion; no blurriness; no smudging; no imperfections; no errors; no mistakes; no flaws; no defects; no blemishes; no scratches; no scuffs; no marks; no stains; no dirt; no dust; no fingerprints; no smudges; no smears."
-#     image = client.text_to_image(prompt, guidance_scale=15)
-#     image.save("img.png")
-#     print("Image saved as img.png")
 
 # ── MAIN FUNCTION ────────────────────────────
 def main():
@@ -48,10 +37,9 @@ def main():
     keyword = extract_keyword(cmd)
     print("Keyword:", keyword)
 
-    # generate_image(keyword)
-
     Imagen.Imagen(keyword)
 
-# ── MAIN EXECUTION ───────────────────────────
+
+# ── ENTRY POINT ──────────────────────────────
 if __name__ == "__main__":
     main()
