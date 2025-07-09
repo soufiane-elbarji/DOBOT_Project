@@ -19,7 +19,7 @@ def Imagen(keyword):
 
     response = client.models.generate_images(
         model='imagen-3.0-generate-002',
-        prompt=f"{keyword} in Cartoon style inspired by early 2010s Western animation, featuring thick black outlines, flat cel-shading, bold and simple color palette, soft lighting. Clean digital 2D vector look, minimal detail, no texture, no gradients, no realism. TV animation aesthetic.",
+        prompt=f"{keyword} in Cartoon style inspired by early 2010s Western animation, featuring thick black outlines, flat cel-shading, bold and simple color palette, soft lighting. Clean digital 2D vector look, minimal detail, no texture, no gradients, no realism. TV animation aesthetic. no text or writing. no small detailes.",
         config=types.GenerateImagesConfig(
             number_of_images=1,
             aspect_ratio='1:1',

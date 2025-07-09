@@ -80,11 +80,12 @@ def main():
     while lastIndex > dType.GetQueuedCmdCurrentIndex(api)[0]:
         # Changed to .format() for Python 3.5 compatibility
         print("Executing command... Current index: {}/{}".format(dType.GetQueuedCmdCurrentIndex(api)[0], lastIndex), end='\r')
+
         dType.dSleep(200) # Wait and check status periodically
 
     # Stop to Execute Command Queued
     dType.SetQueuedCmdStopExec(api)
-    print("\n✅ Drawing complete.")
+    print("\nDrawing complete.")
 
     # Disconnect Dobot
     dType.DisconnectDobot(api)
