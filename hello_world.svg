@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<svg baseProfile="full" height="200" version="1.1" width="200" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css"><![CDATA[
-    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P');
-    .customFont {
-        font-family: 'Press Start 2P';
-        font-size: 14px;
-    }
-    ]]></style></defs><g class="customFont"><text text-anchor="middle" x="100" y="100">hello world</text></g></svg>
