@@ -38,8 +38,9 @@ draw.text(
 )
 
 img.save(output_file)
-print(f"Successfully created '{output_file}' with paragraph text.")
+print(f"Successfully created '{output_file}'.")
 
 # Convert the BMP image to SVG using potrace
 subprocess.run([potrace, output_file, '-o', final_svg, '--svg'])
 print(f"Successfully converted to '{final_svg}'.")
+
