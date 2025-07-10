@@ -7,9 +7,9 @@ import subprocess
 
 # ── CONSTANTS FOR DOBOT SETTINGS ──────────────
 
-FONT = "Fonts/EduNSWACTCursive-Regular.ttf"  # Font for rendering text
+FONT = "Fonts/Roboto-Light.ttf"  # Font for rendering text
 FONT_SIZE = 60  # Font size in points
-LINES = 12
+LINES = 16
 
 # Adjust the path to your Python 3.5 executable
 PYTHON35_PATH = "C:\\Users\\pc\\AppData\\Local\\Programs\\Python\\Python35\\python.exe"
