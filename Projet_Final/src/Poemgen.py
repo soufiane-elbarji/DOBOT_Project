@@ -18,7 +18,7 @@ def Poemgen(keyword, lines):
     
     prompt = (
         "You are an English poet. Write a short rhymed couplet of exactly {} lines, "
-        "no title, no extra text, 6 words per line, No empty lines, just the poem line under line. Topic: {}".format(lines, keyword)
+        "no title, no extra text, 4 words per line, No empty lines, just the poem line under line, lines shoulb be the same lengh to give a square form. Topic: {}".format(lines, keyword)
     )
     
     try:

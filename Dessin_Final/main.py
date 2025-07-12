@@ -10,7 +10,7 @@ import subprocess
 IMAGE_PATH = "temp/image.png"
 
 # Adjust the path to your Python 3.5 executable
-PYTHON35_PATH = "C:\\Users\\pc\\AppData\\Local\\Programs\\Python\\Python35\\python.exe"
+PYTHON35_PATH = "C:\\Users\\abde2\\AppData\\Local\\Programs\\Python\\Python35\\python.exe"
 
 DOBOT_DRAWER_PATH = "src/DobotDrawer.py"
 
