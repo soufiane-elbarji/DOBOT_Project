@@ -28,8 +28,8 @@ DOBOT_X_MAX = 300  # X-maximum for Dobot (right side)
 DOBOT_Y_MIN = -60  # Y-minimum for Dobot (bottom side)
 DOBOT_Y_MAX = 60   # Y-maximum for Dobot (top side)
 
-DOBOT_Z_DRAW = -47 # Z-height for drawing (pen down)
-DOBOT_Z_MOVE = -44 # Z-height for moving between paths (pen up)
+DOBOT_Z_DRAW = -60 # Z-height for drawing (pen down)
+DOBOT_Z_MOVE = -56 # Z-height for moving between paths (pen up)
 
 
 # ── MAIN FUNCTION ───────────────────────────
