@@ -32,7 +32,7 @@ def main():
     # You can adjust these values for speed and precision
     dType.SetHOMEParams(api, 250, 0, 50, 0, isQueued=1)
     dType.SetPTPJointParams(api, 100, 100, 100, 100, 100, 100, 100, 100, isQueued=1)
-    dType.SetPTPCommonParams(api, 50, 50, isQueued=1) # Velocity and Acceleration Ratios
+    dType.SetPTPCommonParams(api, 80, 80, isQueued=1) # Velocity and Acceleration Ratios
     # Set jump height for MOVETO commands
     # The Z-limit should be higher than your move height
     dType.SetPTPJumpParams(api, 20, 50, isQueued=1) 

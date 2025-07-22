@@ -71,17 +71,18 @@ def generate_paths(text_to_render, font_file, font_size):
     min_x, max_x = min(all_x), max(all_x)
     min_y, max_y = min(all_y), max(all_y)
 
+    padding = 0.3
     # Padding and aspect ratio correction
     if max_x - min_x < max_y - min_y:
-        min_y -= height * 0.1
-        max_y += height * 0.1
+        min_y -= height * padding
+        max_y += height * padding
         centre = (max_x + min_x) / 2
         new_width_box = (max_y - min_y) * aspect_ratio
         min_x = centre - new_width_box / 2
         max_x = centre + new_width_box / 2
     else:
-        min_x -= width * 0.1
-        max_x += width * 0.1
+        min_x -= width * padding
+        max_x += width * padding
         centre = (max_y + min_y) / 2
         new_height_box = (max_x - min_x) / aspect_ratio
         min_y = centre - new_height_box / 2
