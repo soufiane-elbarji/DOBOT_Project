@@ -1,5 +1,4 @@
 import numpy as np
-import math
 
 OUTPUT_TOOLPATH_FILE = "temp/toolpath.txt"  # Output file for the toolpath
 

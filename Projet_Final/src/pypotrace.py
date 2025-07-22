@@ -2,8 +2,6 @@ import subprocess
 
 def potrace(img_path, output_svg_path):
     
-    potrace_executable = "src/potrace-1.16.win64/potrace"
-
     turdsize_val = 1
     opttolerance_val = 0.0
     alphamax_val = 1
@@ -11,7 +9,7 @@ def potrace(img_path, output_svg_path):
 
 
     command = [
-        potrace_executable,
+        "potrace",
         img_path,
         "-s", 
         "-o", output_svg_path,

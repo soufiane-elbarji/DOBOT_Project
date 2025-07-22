@@ -11,9 +11,9 @@ text_to_render = "\n".join([
     "And this is the third."
 ])
 
-font_file = "Fonts/EduNSWACTCursive-Regular.ttf"
+font_file = "Fonts/OpenSans-Regular.ttf"
 font_size = 60
-output_file = "img.bmp"
+output_file = "img.png"
 final_svg = "img.svg"
 
 # --- Create the Image ---
